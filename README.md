@@ -1,0 +1,1 @@
+Welcome to the Rossville neighborhood map in Staten Island! It's a peaceful, family-friendly area with lots to explore, like parks and small shops. My go-to spot is Carvel, a popular ice cream shop known for its yummy cones and cakes.
