@@ -7,52 +7,52 @@ body {
 
 
 header {
-    background-color: #333;
+    background-color: #ffe2e2;
     color: #fff;
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
 h1 {
-    color: #ffffff; 
-    font-size: 35px;
+    color: #249c7c; 
+    font-size: 30px;
     font-weight: bold; 
      margin: 0px;
   }
 
 
  h2 {
-    color: #000000; 
-    font-size: 28px; 
+    color: #040000; 
+    font-size: 20px; 
     font-weight: bold; 
      margin: 0px;
 }
 
 #nymap {
-    height: 400px;
+    height: 550px;
     width: 80%;
     margin: 20px auto;
 }
 
 .containertext {
-    padding: 10px;
+    padding: 20px;
 }
 
 .container {
     width: 80%;
-    background-color: #fff;
+    background-color: #ffe2e2;
     padding: 10px 0px;
     border-radius: 8px;
     margin: 0 auto;
 }
 
 p {
-    line-height: 1.4;
+    line-height: 1.2;
    
 }
 
 a {
-    color: #07325f;
+    color: #0f6d1e;
     text-decoration: none;
 }
 
