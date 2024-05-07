@@ -179,18 +179,18 @@ var categoryColors = {
     "X": "#F1E8EC" // Default color for other categories
 };
 
-
 // Function to set style based on category
 function getFeatureStyle(feature) {
-    var category = feature.properties.hurricane_; // Adjust property name
-    var color = categoryColors[category] || "gray"; // Default color if category not found
-    var fillOpacity = category === "X" ? 0 : 0.6; // Set fill opacity to 0 for "X" category
+    var category = feature.properties.hurricane_;
+    var color = categoryColors[category] || "gray";
+    var fillOpacity = category === "X" ? 0 : 0.8;
     return {
         fillColor: color,
         fillOpacity: fillOpacity,
+        color: "#B8EBE6", // Specify the outline color here
+        weight: 1 // Specify the outline width here
     };
 }
-
 
 // Load the GeoJSON polygon file
 fetch('https://oleksandravavilova.github.io/Oleksandra/Hurricane.geojson')
