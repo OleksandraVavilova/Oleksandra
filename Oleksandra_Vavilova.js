@@ -171,7 +171,6 @@ fetch('https://OleksandraVavilova.github.io/Oleksandra/eveningbuildings.geojson'
     console.error('Error loading GeoJSON file:', error);
 });
 
-// Define colors for each hurricane evacuation zone category
 var categoryColors = {
     "1": "red",
     "2": "orange",
@@ -180,9 +179,8 @@ var categoryColors = {
     "X": "gray" // Default color for other categories
 };
 
-// Function to set style based on category
 function getFeatureStyle(feature) {
-    var category = feature.properties.zone; // Use the appropriate property name from the dataset
+    var category = feature.properties.hurricane_; // Adjust property name
     var color = categoryColors[category] || "gray"; // Default color if category not found
     var fillOpacity = category === "X" ? 0 : 0.1; // Set fill opacity to 0 for "X" category
     return {
@@ -193,19 +191,15 @@ function getFeatureStyle(feature) {
     };
 }
 
-// Create a Leaflet map centered at a specific location
 var map = L.map('map').setView([40.7128, -74.0060], 12);
 
-// Add a base layer to the map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-// Load the Hurricane Evacuation Zones GeoJSON data
 fetch('https://OleksandraVavilova.github.io/Oleksandra/Hurricane.geojson')
     .then(response => response.json())
     .then(geojson => {
-        // Add the GeoJSON polygons to the map with customized style
         L.geoJSON(geojson, {
             style: getFeatureStyle
         }).addTo(map);
