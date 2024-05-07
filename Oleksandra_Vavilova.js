@@ -172,11 +172,11 @@ fetch('https://OleksandraVavilova.github.io/Oleksandra/eveningbuildings.geojson'
 });
 
 var categoryColors = {
-    "1": "red",
-    "2": "orange",
-    "3": "yellow",
-    "4": "green",
-    "X": "gray" // Default color for other categories
+    "1": "F00267",
+    "2": "E25892",
+    "3": "E88CB3",
+    "4": "FDC9DF",
+    "X": "F1E8EC" // Default color for other categories
 };
 
 
