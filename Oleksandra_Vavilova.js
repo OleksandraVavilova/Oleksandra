@@ -171,26 +171,6 @@ fetch('https://OleksandraVavilova.github.io/Oleksandra/eveningbuildings.geojson'
     console.error('Error loading GeoJSON file:', error);
 });
 
-var categoryColors = {
-    "1": "red",
-    "2": "orange",
-    "3": "yellow",
-    "4": "green",
-    "X": "gray" // Default color for other categories
-};
-
-function getFeatureStyle(feature) {
-    var category = feature.properties.hurricane_; // Adjust property name
-    var color = categoryColors[category] || "gray"; // Default color if category not found
-    var fillOpacity = category === "X" ? 0 : 0.1; // Set fill opacity to 0 for "X" category
-    return {
-        fillColor: color,
-        fillOpacity: fillOpacity,
-        color: "black", // Border color
-        weight: 1 // Border width
-    };
-}
-
 var map = L.map('map').setView([40.7128, -74.0060], 12);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -200,9 +180,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 fetch('https://OleksandraVavilova.github.io/Oleksandra/Hurricane.geojson')
     .then(response => response.json())
     .then(geojson => {
-        L.geoJSON(geojson, {
-            style: getFeatureStyle
-        }).addTo(map);
+        L.geoJSON(geojson).addTo(map); // Add GeoJSON data without styling
     })
     .catch(error => {
         console.error('Error loading GeoJSON file:', error);
