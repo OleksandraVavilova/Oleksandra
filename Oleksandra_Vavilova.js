@@ -182,7 +182,7 @@ var categoryColors = {
 
 // Function to set style based on category
 function getFeatureStyle(feature) {
-    var category = feature.properties.hurricane_; // Adjust property name if needed
+    var category = feature.properties.zone; // Use the appropriate property name from the dataset
     var color = categoryColors[category] || "gray"; // Default color if category not found
     var fillOpacity = category === "X" ? 0 : 0.1; // Set fill opacity to 0 for "X" category
     return {
@@ -201,7 +201,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-// Load the GeoJSON polygon file
+// Load the Hurricane Evacuation Zones GeoJSON data
 fetch('https://OleksandraVavilova.github.io/Oleksandra/Hurricane.geojson')
     .then(response => response.json())
     .then(geojson => {
