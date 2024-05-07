@@ -184,7 +184,7 @@ var categoryColors = {
 function getFeatureStyle(feature) {
     var category = feature.properties.hurricane_; // Adjust property name
     var color = categoryColors[category] || "gray"; // Default color if category not found
-    var fillOpacity = category === "X" ? 0 : 0.1; // Set fill opacity to 0 for "X" category
+    var fillOpacity = category === "X" ? 0 : 0.6; // Set fill opacity to 0 for "X" category
     return {
         fillColor: color,
         fillOpacity: fillOpacity,
@@ -193,7 +193,7 @@ function getFeatureStyle(feature) {
 
 
 // Load the GeoJSON polygon file
-fetch('https://OleksandraVavilova.github.io/Oleksandra/Hurricane.geojson')
+fetch('https://oleksandravavilova.github.io/Oleksandra/Hurricane.geojson')
 .then(response => response.json())
 .then(geojson => {
     // Add the GeoJSON polygons to the map with customized style
